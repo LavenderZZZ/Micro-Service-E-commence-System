@@ -30,5 +30,5 @@ func (e *EsProductDaoImpl) GetAllProductList(id *int64) ([]model.EsProduct, erro
 }
 
 func NewEsProductDao(db *gorm.DB) EsproductDao {
-	return &esProductDaoImpl{db: db}
+	return &EsProductDaoImpl{db: db}
 }

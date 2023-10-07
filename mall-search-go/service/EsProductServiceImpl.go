@@ -1,6 +1,9 @@
 package service
 
-import "mall-search-go/store"
+import (
+	"mall-search-go/repository"
+	"mall-search-go/store"
+)
 
 type EsProductServiceImpl struct {
 	prouductDao   store.EsproductDao
@@ -12,5 +15,6 @@ func (s EsProductServiceImpl) ImportAll() (int, error) {
 	if err != nil {
 		return 0, err
 	}
+	repository.SaveAll(esProductList)
 
 }
