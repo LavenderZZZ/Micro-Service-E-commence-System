@@ -1,173 +1,89 @@
-# mall-swarm
+Project Proposal
+1.Project Title: Micro Service E-commerce System (Micro-mall)
+2. Project Members
+Name	Email
+Zeyu Zhang	e1221614@u.nus.edu
+Zhu Zuyao	e1221796@u.nus.edu
+Wu Jiayi	e1221832@u.nus.edu
+Qian Ruiwen	e1221656@u.nus.edu
+Gao Yuying	e1221758@u.nus.edu
+3. Overview
+Our integrated micro-services e-commerce system is built on a range of technologies including Spring Cloud Alibaba, Spring Boot, Oauth, MyBatis, Docker, Jenkins, Kubernetes, Elasticsearch and more. The project business architecture of this system is divided into a front-end mall and a back-end management system, aiming  at provide a complete e-commerce solution. The front-end mall contains four core modules, which are home portal, the product interface, the user interface and the order process, while the back-end management system also contains four key modules, which are the product module, the order module, the marketing module and privilege module, to support comprehensive business requirements.
 
-<p>
-  <a href="#公众号"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E5%85%AC%E4%BC%97%E5%8F%B7-macrozheng-blue.svg" alt="公众号"></a>
-  <a href="#公众号"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E4%BA%A4%E6%B5%81-%E5%BE%AE%E4%BF%A1%E7%BE%A4-2BA245.svg" alt="交流"></a>
-  <a href="https://github.com/macrozheng/mall-learning"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B-mall--learning-green.svg" alt="学习教程"></a>
-  <a href="https://github.com/macrozheng/mall"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E5%90%8E%E5%8F%B0%E9%A1%B9%E7%9B%AE-mall-blue.svg" alt="后台项目"></a>
-  <a href="https://github.com/macrozheng/mall-admin-web"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE-mall--admin--web-green.svg" alt="前端项目"></a>
-  <a href="https://gitee.com/macrozheng/mall-swarm"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E7%A0%81%E4%BA%91-%E9%A1%B9%E7%9B%AE%E5%9C%B0%E5%9D%80-orange.svg" alt="码云"></a>
-</p>
+The Micro-mall System will provide several key benefits, including:
+Micro-service Architecture: Adopting micro-service architecture makes the system easier to expand and maintain, and each microservice can be developed, deployed and upgraded independently.
+Advanced Technology Stack: Utilizing Spring Cloud Alibaba, Spring Boot  and other leading technologies, the system has high performance, high security and scalability.
+User-friendly front-end mall: The front-end mall module provides a powerful user interface, including personalized homepage, product classification, the shopping cart and other functions to enhance user experience.
+Efficient Backend Management: The backend management system module supports product, order, marketing and permission management, enabling administrators to efficiently manage business processes.
+Search and Analyze: Integrating Elasticsearch, the system has high-speed search and data analysis capabilities to help users quickly find the goods they need and provide data insights.
+Containerized Deployment: Adopting Docker technology ensures the consistency and portability of the system in different environments, simplifying the deployment process.
+Strong Security: Oauth integration provides advanced authentication and authorization mechanisms to safeguard user data and transactions.
+Customization and Flexibility: MyBatis supports customization of database operations to adapt to different business needs.
 
-## 友情提示
+In conclusion, our integrated micro-services e-commerce system provides a powerful, highly customizable and secure e-commerce platform for businesses. Its adoption of a modern technology stack and flexible architecture gives it multiple advantages that help meet changing market demands and provide a superior experience for customers and administrators.
 
-> 1. **快速体验项目**：[在线访问地址](https://www.macrozheng.com/admin/index.html) 。
-> 2. **全套学习教程**：[《mall学习教程》](https://www.macrozheng.com) 。
-> 3. **Spring Cloud全套教程**：[《SpringCloud学习教程》](https://github.com/macrozheng/springcloud-learning) 。
-> 4. **专属学习路线**：学习不走弯路，整理了套非常不错的[《mall专属学习路线》](#公众号) 。
-> 5. **项目交流**：想要加群交流项目的朋友，可以加入[mall项目交流群](#公众号) 。
+4. Functional Requirements
+4.1 Product Management
+Ability to add, update, or remove products with details such as name, price, description, images, and stock information.
+Support for product categorization and tagging.
 
-## 项目介绍
+4.2 Search Functionality
+Integration with Elasticsearch for fast and relevant product search results.
+Support for filtering and sorting the search results.
 
-`mall-swarm`是一套微服务商城系统，采用了 Spring Cloud 2021 & Alibaba、Spring Boot 2.7、Oauth2、MyBatis、Elasticsearch、Docker、Kubernetes等核心技术，同时提供了基于Vue的管理后台方便快速搭建系统。`mall-swarm`在电商业务的基础集成了注册中心、配置中心、监控中心、网关等系统功能。文档齐全，附带全套Spring Cloud教程。
+4.3 User Access Management
+The module focuses on managing user creation and access control within the system. The system administrator can create new roles and assign specific access rights based on the organization's needs, ensuring a secure and flexible approach to user access control.
+4.3.1 User Registration and Authentication
+· The system will provide a user registration process that requires users to enter their personal information, such as username, email address, and password. 
+· The backend system will generate a JSON Web Token (JWT) upon successful login that includes user identification and an expiration time.
+· The frontend system will store the JWT in the user's browser and use it to authenticate subsequent requests.
+· The system will provide an authentication endpoint that validates the JWT and returns a new one with a renewed expiration time.
+4.3.2 User Access Control
+· The system provides a role-based access control (RBAC) system that enables the creation of different access areas and different access rights.
+· The system allows system administrator to create new roles and assign different access rights to them based on the specific needs of the organization.
+· The system allows system administrator to assign roles to users, based on their job responsibilities and the access they require to perform their work.
+· The system allows system administrator to withdraw roles from users at any time, when their job responsibilities change or when they no longer require access to certain areas of the system.
+4.4 Microservices Infrastructure
+Distributed system with separate services for user management, product management, order management, etc.
+Each service should be able to run, scale, and fail independently.
 
-## 系统架构图
+5. Non-Functional Requirements
+5.1 Performance: 
+Login Response Time: With 1,000 concurrently logged-in users, the response time for login should not exceed 3 seconds. This metric ensures that even during peak usage times, the user experience remains smooth and frustration-free.
+Concurrency Handling: The system's backend and frontend should be optimized to manage a high number of concurrent users and requests. This includes efficient database indexing, caching mechanisms, and load balancing strategies to distribute incoming requests effectively.
+Throughput: As a subset of performance, the system should also handle a high number of transactions or actions per second, ensuring that user operations like adding to cart, searching products, or checking out are seamless and swift.
 
-![系统架构图](http://img.macrozheng.com/mall/project/mall_micro_service_arch.jpg)
+5.2 System Availability: The system should be available for use 24 hours, 7 days a week, with minimal downtime or interruption. 
+Uptime: The system should aim for a 99.9% uptime (known as "Three Nines"), which translates to a downtime of not more than 43.8 minutes per month.
+Maintenance Windows: Any planned maintenance or updates that may cause downtime should be scheduled during off-peak hours and communicated to users in advance.
+Failover Strategy: Implement redundancy measures, such as standby servers or backup databases, to ensure system availability in case of unexpected failures.
 
-## 组织结构
+5.3 Scalability: The live system will support up to 10000 active user accounts, with 1000 users simultaneously logged in at peak time. The system should be able to adapt to changing usage patterns and requirements over time, without requiring major architectural changes or disruptions. Microservices architecture, when combined with Kubernetes, should allow easy horizontal scaling. 
+User Growth: The architecture should be designed to comfortably support up to 10000 active user accounts. Peak load expectations are 10000 simultaneous logins.
+Horizontal Scaling with Kubernetes: As demand increases, the system should scale out (add more instances) rather than scale up (increase the capacity of an existing instance). Kubernetes allows for automatic scaling based on predefined metrics such as CPU usage or memory consumption.
+Load Balancing: Implement efficient load balancers to distribute incoming traffic across multiple servers or instances, ensuring that no single server is overwhelmed.
+5.4 Continuous Integration & Deployment:
+Utilize Docker for containerization to ensure consistent environments.
+Implement a CI/CD pipeline for automated testing and deployment.
+Docker Containerization: By packaging the application and its dependencies into Docker containers, the system ensures consistent environments across development, staging, and production. This eliminates the "it works on my machine" problem.
+Automated Testing: As part of the CI pipeline, implement automated testing (unit, integration, and end-to-end tests) to catch regressions and ensure that new features don't break existing functionality.
+Deployment Automation: Implement CD tools to automate the deployment process, ensuring that tested and verified code gets deployed to production with minimal human intervention. Rollback strategies should also be in place in case a deployment introduces unforeseen issues.
 
-``` lua
-mall
-├── mall-common -- 工具类及通用代码模块
-├── mall-mbg -- MyBatisGenerator生成的数据库操作代码模块
-├── mall-auth -- 基于Spring Security Oauth2的统一的认证中心
-├── mall-gateway -- 基于Spring Cloud Gateway的微服务API网关服务
-├── mall-monitor -- 基于Spring Boot Admin的微服务监控中心
-├── mall-admin -- 后台管理系统服务
-├── mall-search -- 基于Elasticsearch的商品搜索系统服务
-├── mall-portal -- 移动端商城系统服务
-├── mall-demo -- 微服务远程调用测试服务
-└── config -- 配置中心存储的配置
-```
-
-## 项目文档
-
-- 项目文档`mall`系列教程：[https://www.macrozheng.com](https://www.macrozheng.com)
-- 配套`Spring Cloud`系列教程：[https://github.com/macrozheng/springcloud-learning](https://github.com/macrozheng/springcloud-learning)
-
-## 项目演示
-
-- 后台管理系统： [https://www.macrozheng.com/admin/index.html](https://www.macrozheng.com/admin/index.html)
-- 移动端商城系统：[https://www.macrozheng.com/app/mainpage.html](https://www.macrozheng.com/app/mainpage.html)
-
-## 技术选型
-
-### 后端技术
-
-| 技术                   | 说明                 | 官网                                                 |
-| ---------------------- | -------------------- | ---------------------------------------------------- |
-| Spring Cloud           | 微服务框架           | https://spring.io/projects/spring-cloud              |
-| Spring Cloud Alibaba   | 微服务框架           | https://github.com/alibaba/spring-cloud-alibaba      |
-| Spring Boot            | 容器+MVC框架         | https://spring.io/projects/spring-boot               |
-| Spring Security Oauth2 | 认证和授权框架       | https://spring.io/projects/spring-security-oauth     |
-| MyBatis                | ORM框架              | http://www.mybatis.org/mybatis-3/zh/index.html       |
-| MyBatisGenerator       | 数据层代码生成       | http://www.mybatis.org/generator/index.html          |
-| PageHelper             | MyBatis物理分页插件  | http://git.oschina.net/free/Mybatis_PageHelper       |
-| Knife4j                | 文档生产工具         | https://github.com/xiaoymin/swagger-bootstrap-ui     |
-| Elasticsearch          | 搜索引擎             | https://github.com/elastic/elasticsearch             |
-| RabbitMq               | 消息队列             | https://www.rabbitmq.com/                            |
-| Redis                  | 分布式缓存           | https://redis.io/                                    |
-| MongoDb                | NoSql数据库          | https://www.mongodb.com/                             |
-| Docker                 | 应用容器引擎         | https://www.docker.com/                              |
-| Druid                  | 数据库连接池         | https://github.com/alibaba/druid                     |
-| OSS                    | 对象存储             | https://github.com/aliyun/aliyun-oss-java-sdk        |
-| MinIO                  | 对象存储             | https://github.com/minio/minio                       |
-| JWT                    | JWT登录支持          | https://github.com/jwtk/jjwt                         |
-| LogStash               | 日志收集             | https://github.com/logstash/logstash-logback-encoder |
-| Lombok                 | 简化对象封装工具     | https://github.com/rzwitserloot/lombok               |
-| Seata                  | 全局事务管理框架     | https://github.com/seata/seata                       |
-| Portainer              | 可视化Docker容器管理 | https://github.com/portainer/portainer               |
-| Jenkins                | 自动化部署工具       | https://github.com/jenkinsci/jenkins                 |
-| Kubernetes             | 应用容器管理平台     | https://kubernetes.io/                               |
-
-### 前端技术
-
-| 技术       | 说明                  | 官网                           |
-| ---------- | --------------------- | ------------------------------ |
-| Vue        | 前端框架              | https://vuejs.org/             |
-| Vue-router | 路由框架              | https://router.vuejs.org/      |
-| Vuex       | 全局状态管理框架      | https://vuex.vuejs.org/        |
-| Element    | 前端UI框架            | https://element.eleme.io/      |
-| Axios      | 前端HTTP框架          | https://github.com/axios/axios |
-| v-charts   | 基于Echarts的图表框架 | https://v-charts.js.org/       |
-
-
-## 环境搭建
-
-### 开发环境
-
-| 工具          | 版本号 | 下载                                                         |
-| ------------- | ------ | ------------------------------------------------------------ |
-| JDK           | 1.8    | https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html |
-| Mysql         | 5.7    | https://www.mysql.com/                                       |
-| Redis         | 7.0    | https://redis.io/download                                    |
-| Elasticsearch | 7.17.3 | https://www.elastic.co/cn/downloads/elasticsearch            |
-| Kibana        | 7.17.3 | https://www.elastic.co/cn/downloads/kibana                   |
-| Logstash      | 7.17.3 | https://www.elastic.co/cn/downloads/logstash                 |
-| MongoDb       | 5.0    | https://www.mongodb.com/download-center                      |
-| RabbitMq      | 3.10.5 | http://www.rabbitmq.com/download.html                        |
-| nginx         | 1.22   | http://nginx.org/en/download.html                            |
-
-### 搭建步骤
-
-> Windows环境部署
-
-- Windows环境搭建请参考：[mall-swarm在Windows环境下的部署](https://www.macrozheng.com/mall/deploy/mall_swarm_deploy_windows.html);
-- `mall-admin-web`项目的安装及部署请参考：[mall前端项目的安装与部署](https://www.macrozheng.com/mall/deploy/mall_deploy_web.html);
-- `ELK`日志收集系统的搭建请参考：[SpringBoot应用整合ELK实现日志收集](https://www.macrozheng.com/mall/reference/mall_tiny_elk.html);
-- 使用MinIO存储文件请参考：[前后端分离项目，如何优雅实现文件存储](https://www.macrozheng.com/mall/technology/minio_use.html);
-- 读写分离解决方案请参考：[你还在代码里做读写分离么，试试这个中间件吧](https://www.macrozheng.com/project/gaea.html);
-- `分布式事务`解决方案请参考：[使用Seata彻底解决Spring Cloud中的分布式事务问题！](https://www.macrozheng.com/cloud/seata.html) 。
-
-> Docker环境部署
-
-- 使用虚拟机安装CentOS7.6请参考：[虚拟机安装及使用Linux，看这一篇就够了](https://www.macrozheng.com/tool/linux_install.html);
-- Docker环境的安装请参考：[开发者必备Docker命令](https://www.macrozheng.com/mall/reference/linux_command.html);
-- 本项目Docker镜像构建请参考：[使用Maven插件为SpringBoot应用构建Docker镜像](https://www.macrozheng.com/mall/reference/docker_maven.html);
-- 本项目在Docker容器下的部署请参考：[mall-swarm在Linux环境下的部署（基于Docker容器）](https://www.macrozheng.com/mall/deploy/mall_swarm_deploy_windows.html);
-- 本项目使用Jenkins自动化部署请参考：[mall-swarm使用Jenkins实现自动化部署](https://www.macrozheng.com/mall/deploy/mall_swarm_deploy_jenkins.html) 。
-
-> Kubernetes环境部署
-
-- 本项目使用Kubernetes部署请参考：[mall-swarm微服务项目在K8S下的实践！](https://www.macrozheng.com/mall/deploy/mall_swarm_deploy_k8s.html)
-
-## 运行效果展示
-
-- 查看注册中心注册服务信息，访问地址：http://192.168.3.101:8848/nacos/
-
-![](http://img.macrozheng.com/mall/project/mall_swarm_run_new_01.png)
-
-- 监控中心应用信息，访问地址：http://192.168.3.101:8101
-
-![](http://img.macrozheng.com/mall/project/mall_swarm_run_new_02.png)
-
-![](http://img.macrozheng.com/mall/project/mall_swarm_run_new_03.png)
-
-![](http://img.macrozheng.com/mall/project/mall_swarm_run_new_04.png)
-
-- API文档信息，访问地址：http://192.168.3.101:8201
-
-![](http://img.macrozheng.com/mall/project/mall_swarm_run_05.png)
-
-- 日志收集系统信息，访问地址：http://192.168.3.101:5601
-
-![](http://img.macrozheng.com/mall/project/mall_swarm_run_new_06.png)
-
-- 可视化容器管理，访问地址：http://192.168.3.101:9000
-
-![](http://img.macrozheng.com/mall/project/mall_swarm_run_new_07.png)
-
-![](http://img.macrozheng.com/mall/project/mall_swarm_run_new_08.png)
-
-## 公众号
-
-加微信群交流，关注公众号「**macrozheng**」，回复「**加群**」即可。
-
-![公众号图片](http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/banner/qrcode_for_macrozheng_258.jpg)
-
-## 许可证
-
-[Apache License 2.0](https://github.com/macrozheng/mall-swarm/blob/master/LICENSE)
-
-Copyright (c) 2018-2022 macrozheng
+6. Effort Estimates 
+We have planned for a total of four major iterations corresponding to the completion of each phase of the software development life cycle in Agile methodology approach. The total estimated effort for the entire project would be 7 weeks.
+Iteration	Duration	Activities	Deliverables
+1	1	Requirements Analysis: Work with stakeholders to clearly define the basic requirements and functionality of the system. This may include user stories, use cases, feature lists, etc.
+Architecture Design: Design the overall architecture of the system, defining the boundaries of the microservices and how they will communicate with each other.
+Develop Iteration Plan: Create a list of tasks for the first iteration and schedule the work to ensure that it is completed in the allotted time.	Project vision document, requirements document, system architecture design document, task list for the first iteration.
+2	2.5	Prototyping: Develop a basic system prototype to validate key functionality and user experience.
+User Validation: Deliver the prototype to users or key stakeholders for feedback and revision.
+Iteration Plan Revision: Update the iteration plan and task list based on user feedback.	Prototyping systems, user feedback reports, revised task lists.
+3	2.5	Microservice Development: Concurrent parallel development of microservices, with each microservice team responsible for its specific functionality.
+Unit Testing: Developers conduct unit tests to validate the functionality of the microservices.
+Integration Testing: Microservices undergo integration testing to ensure that they work together.
+System Testing: End-to-end testing of the entire system, simulating real user interactions and scenarios.
+Performance testing: Evaluate the performance and scalability of the system and identify potential performance bottlenecks.	Completed microservice code, passed unit tests, integration test reports, system test reports, performance test reports.
+4	1	Deployment Preparation: Prepare the production environment and infrastructure, including database configuration, server settings, and so on.
+Deploying Microservices: Deploy microservices to the production environment to ensure their stable operation.
+Monitoring and Maintenance: Set up monitoring and alerting systems to identify and resolve potential problems.
+User Training: Train end-users and administrators to ensure they are able to use the system properly.	Deployed microservices, monitoring and alerting system configuration, user training documentation.
