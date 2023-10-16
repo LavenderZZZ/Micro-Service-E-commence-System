@@ -18,7 +18,7 @@ func (e *EsProductDaoImpl) GetAllProductList(id *int64) ([]model.EsProduct, erro
 	query := e.db.Preload("AttrValueList").Where("delete_status = ? AND publish_status = ?", 0, 1)
 
 	if id != nil {
-		query = query.Where("id = ?", id)
+		query = query.Where("id = ?", *id)
 	}
 
 	err := e.db.Find(&esProducts).Error

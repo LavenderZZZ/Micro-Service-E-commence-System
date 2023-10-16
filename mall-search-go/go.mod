@@ -4,6 +4,7 @@ go 1.20
 
 require (
 	github.com/elastic/go-elasticsearch/v8 v8.10.0
+	github.com/mitchellh/mapstructure v1.5.0
 	gorm.io/gorm v1.25.4
 )
 

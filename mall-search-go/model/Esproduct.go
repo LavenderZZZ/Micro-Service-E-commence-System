@@ -1,5 +1,17 @@
 package model
 
+type Page struct {
+	Content  []EsProduct
+	PageInfo PageInfo
+}
+
+type PageInfo struct {
+	TotalPages    int
+	TotalElements int
+	Number        int
+	Size          int
+}
+
 type EsProduct struct {
 	ID                  int64 `gorm:"primaryKey"`
 	ProductSn           string
