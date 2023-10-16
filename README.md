@@ -26,7 +26,7 @@ Support for filtering and sorting the search results.
 
 ### User Access Management
 The module focuses on managing user creation and access control within the system. The system administrator can create new roles and assign specific access rights based on the organization's needs, ensuring a secure and flexible approach to user access control.
-## User Registration and Authentication
+### User Registration and Authentication
 · The system will provide a user registration process that requires users to enter their personal information, such as username, email address, and password. 
 · The backend system will generate a JSON Web Token (JWT) upon successful login that includes user identification and an expiration time.
 · The frontend system will store the JWT in the user's browser and use it to authenticate subsequent requests.
