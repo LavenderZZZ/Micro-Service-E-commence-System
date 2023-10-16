@@ -10,29 +10,21 @@ type EsProductService interface {
 	ImportAll() (int, error)
 
 	// Delete a product from ES
-	Delete(id int) error
-
-	// Delete multiple products from ES
-	DeleteBatch(ids []int) error
+	Delete(id int64) error
 
 	// Create a product in ES
-	Create(id int) (model.EsProduct, error)
-
-	// Create multiple products in ES
-	CreateBatch(esProductList []model.EsProduct) (int, error)
+	Create(id int64) (*model.EsProduct, error)
 
 	// Search for products in ES
-	Search(keyword string, pageNum int, pageSize int) ([]model.EsProduct, int64, error)
+	DeleteBatch(ids []int64) error
 
-	//// Search for products in ES by category
-	//SearchByProductCategoryId(productCategoryId int, keyword string, pageNum int, pageSize int, sort int) ([]EsProduct, int64, error)
-	//
-	//// Search for products in ES by brand
-	//SearchByBrandId(brandId int, keyword string, pageNum int, pageSize int, sort int) ([]EsProduct, int64, error)
+	SearchByNameOrSubTitleOrKeywords(keyword string, pageNum, pageSize int) (model.Page, error)
+
+	SearchByProductCategoryId(keyword string, brandId *int64, productCategoryId *int64, pageNum int, pageSize int, sort int) (model.Page, error)
 
 	// recommend products based on product id
-	Recommend(id int, pageNum int, pageSize int) ([]model.EsProduct, error)
+	Recommend(id int64, pageNum int, pageSize int) (model.Page, error)
 
 	// SearchRelated products based on keyword
-	SearchRelated(keyword string, pageNum int, pageSize int) ([]model.EsProduct, error)
+	SearchRelated(keyword string) (model.EsProductRelatedInfo, error)
 }

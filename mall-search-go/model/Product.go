@@ -15,9 +15,9 @@ type PageInfo struct {
 type EsProduct struct {
 	ID                  int64 `gorm:"primaryKey"`
 	ProductSn           string
-	BrandID             int64
+	BrandId             int64
 	BrandName           string
-	ProductCategoryID   int64
+	ProductCategoryId   int64
 	ProductCategoryName string
 	Pic                 string
 	Name                string
@@ -40,4 +40,18 @@ type EsProductAttributeValue struct {
 	Type               string
 	Name               string
 	ProductID          int64
+}
+
+// EsProductRelatedInfo represents the product-related information for search results.
+type EsProductRelatedInfo struct {
+	BrandNames           []string      `json:"brandNames"`
+	ProductCategoryNames []string      `json:"productCategoryNames"`
+	ProductAttrs         []ProductAttr `json:"productAttrs"`
+}
+
+// ProductAttr represents a product attribute.
+type ProductAttr struct {
+	AttrId     int64    `json:"attrId"`
+	AttrName   string   `json:"attrName"`
+	AttrValues []string `json:"attrValues"`
 }

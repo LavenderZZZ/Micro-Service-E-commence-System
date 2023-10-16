@@ -50,3 +50,18 @@ func (s *EsProductServiceImpl) SearchByNameOrSubTitleOrKeywords(keyword string, 
 func (s *EsProductServiceImpl) SearchByProductCategoryId(keyword string, brandId *int64, productCategoryId *int64, pageNum int, pageSize int, sort int) (model.Page, error) {
 	return s.elasticRepo.SearchById(keyword, brandId, productCategoryId, pageNum, pageSize, sort)
 }
+
+func (s *EsProductServiceImpl) Recommend(id int64, pageNum int, pageSize int) (model.Page, error) {
+	var result model.Page
+
+	product, err := s.prouductDao.GetAllProductList(&id)
+	if err != nil {
+		return result, err
+	}
+
+	return s.elasticRepo.Recommend(id, product[0], pageNum, pageSize)
+}
+
+func (s *EsProductServiceImpl) SearchRelated(keyword string) (model.EsProductRelatedInfo, error) {
+	return s.elasticRepo.SearchRelated(keyword)
+}

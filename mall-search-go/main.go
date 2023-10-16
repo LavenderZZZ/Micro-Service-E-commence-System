@@ -1,0 +1,1 @@
+package mall_search_go
