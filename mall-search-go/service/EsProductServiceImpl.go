@@ -1,6 +1,9 @@
 package service
 
 import (
+	"fmt"
+	"gorm.io/driver/mysql"
+	"gorm.io/gorm"
 	"mall-search-go/model"
 	"mall-search-go/repository"
 	"mall-search-go/store"
@@ -9,6 +12,17 @@ import (
 type EsProductServiceImpl struct {
 	prouductDao store.EsproductDao
 	elasticRepo repository.EsProductRepository
+}
+
+func NewEsProductServiceImpl() EsProductService {
+	dsn := "username:password@tcp(localhost:3306)/dbname?charset=utf8mb4&parseTime=True&loc=Local"
+	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
+	if err != nil {
+		fmt.Println(err.Error())
+		return nil
+	}
+
+	return &EsProductServiceImpl{prouductDao: store.NewEsProductDao(db), elasticRepo: repository.Repo}
 }
 
 func (s *EsProductServiceImpl) ImportAll() (int, error) {
