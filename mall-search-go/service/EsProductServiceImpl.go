@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
+	"mall-search-go/config"
 	"mall-search-go/model"
 	"mall-search-go/repository"
 	"mall-search-go/store"
@@ -15,8 +16,8 @@ type EsProductServiceImpl struct {
 }
 
 func NewEsProductServiceImpl() EsProductService {
-	dsn := "username:password@tcp(localhost:3306)/dbname?charset=utf8mb4&parseTime=True&loc=Local"
-	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
+	//dsn := "root:root@tcp(localhost:3306)/dbname?charset=utf8mb4&parseTime=True&loc=Local"
+	db, err := gorm.Open(mysql.Open(config.Dsn), &gorm.Config{})
 	if err != nil {
 		fmt.Println(err.Error())
 		return nil
