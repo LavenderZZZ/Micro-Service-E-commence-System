@@ -37,7 +37,7 @@ func main() {
 	server.RegisterRoutes(r)
 
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
-	err := r.Run(":8080")
+	err := r.Run(":8081")
 	if err != nil {
 		panic(err)
 	}
