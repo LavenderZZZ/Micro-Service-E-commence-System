@@ -1,6 +1,6 @@
 module mall-search-go
 
-go 1.20
+go 1.18
 
 require (
 	github.com/elastic/go-elasticsearch/v8 v8.10.0
