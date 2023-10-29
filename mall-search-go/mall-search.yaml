@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: mall-search
-          image: zaynzzy/all-search:latest # Replace with your Docker image name and tag
+          image: zaynzzy/mall-search:latest # Replace with your Docker image name and tag
           ports:
             - containerPort: 8081
 
