@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   name: mall-search-Deployment
 spec:
-  serviceName: "mall-search-service"
   replicas: 2
   selector:
     matchLabels:
